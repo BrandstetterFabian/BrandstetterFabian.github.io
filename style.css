@@ -3,9 +3,9 @@ body{
 }
 #navBar{
     display: flex;
-    background-color: lightgreen;
+    background-color: transparent;
     padding: 1%;
-    justify-content: flex-start;
+    justify-content: flex-end;
     border-radius: 1vh;
 }
 #navBar > a{
@@ -13,19 +13,21 @@ body{
     text-decoration: none;
     color: black;
     margin: 1%;
+    transition: margin-top 0.3s, text-decoration 0.8s;
 }
 #navBar > a:hover{
-    color: white;
     margin-top: 0.6%;
+    text-decoration: underline;
+    color: lightskyblue;
 }
-.container1{
-    background-color: rgb(255,240,235);
+article{
+    background-color: rgb(255,210,235);
     padding: 1%;
     border-radius: 1vh;
     width: 50%;
     margin: 1%;
+    transition: box-shadow 0.5s;
 }
-.container1:hover{
+article:hover{
     box-shadow: 20px 10px 5px rgb(255,240,250);
-    margin-top: 0.5%;
 }
