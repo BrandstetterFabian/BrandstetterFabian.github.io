@@ -8,6 +8,7 @@
         <title>FREAKY CLICKER</title>
     </head>
     <body class="bg-cyan-500 h-screen">
+
         <div class="stats stats-vertical lg:stats-horizontal shadow-xs m-5">
         <div class="stat">
             <div class="stat-title">clicks/second</div>
@@ -24,13 +25,32 @@
             <di id="div_secondsPlayed" class="stat-value"></div>
         </div>
         </div>
-        <div class="flex justify-center items-center h-[80vh]">
+
+        <br>
+
+        <ul class="inline-block w-fit h-fit bg-base-100 rounded-box shadow-md m-5 p-2">
+            <header class="m-2">Shop</header>
+            <li class="flex items-center gap-3 p-3">
+                <div id="div_freakyClickerAmount" class="text-4xl font-thin opacity-30 tabular-nums">0x</div>
+                <img class="size-10 rounded-box" src="images/freakyEmoji_transparent.png"/>
+                <div>
+                    <div>freaky clicker</div>
+                    <div class="text-xs font-semibold opacity-60">+1 clicks/second</div>
+                </div>
+                <button id="btn_buyFreakyClicker" onclick="buyFreakyClicker(1)" class="btn btn-square btn-ghost">
+                    30 clicks
+                </button>
+            </li>
+        </ul>
+
+        <div class="absolute top-1/2 left-1/2">
             <div id="clickerStage">
                 <button onclick="countUp()">
                     <img src="images/freakyEmoji_transparent.png" class="h-40">
                 </button>
             </div>
         </div>
+        
         
         <script src="script.js"></script>
 </body>
