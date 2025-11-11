@@ -1,9 +1,14 @@
 class Clicker{
-    clickCount = 0;
+    clickCount = 200;
     clicksPerSecond = 1;
 
+    freakyClickerClickIncrease = 1;
     freakyClickerPrice = 30;
     freakyClickerAmount = 0;
+
+    geekedFreakClickIncrease = 10;
+    geekedFreakPrice = 200;
+    geekedFreakAmount = 0;
 
     secondsPlayed = 0;
 
@@ -18,13 +23,22 @@ class Clicker{
 
         updateStats();
     }
-    buyFreakyClicker(amount){
+    buyFreakyClicker(){
         if(this.clickCount >= this.freakyClickerPrice){
-            this.increaseClicksPerSecond(amount, this.freakyClickerPrice);
+            this.increaseClicksPerSecond(this.freakyClickerClickIncrease, this.freakyClickerPrice);
             this.freakyClickerPrice += 10;
             this.freakyClickerAmount++;
             document.getElementById("btn_buyFreakyClicker").innerHTML = this.freakyClickerPrice + " clicks";
             document.getElementById("div_freakyClickerAmount").innerHTML = this.freakyClickerAmount + "x";
+        }
+    }
+    buyGeekedFreak(){
+        if(this.clickCount >= this.geekedFreakPrice){
+            this.increaseClicksPerSecond(this.geekedFreakClickIncrease, this.geekedFreakPrice);
+            this.geekedFreakPrice += 100;
+            this.geekedFreakAmount++;
+            document.getElementById("btn_buyGeekedFreak").innerHTML = this.geekedFreakPrice + " clicks";
+            document.getElementById("div_geekedFreakAmount").innerHTML = this.geekedFreakAmount + "x";
         }
     }
     updateStats(){
@@ -43,8 +57,11 @@ class Clicker{
 const clicker = new Clicker();
 init();
 
-function buyFreakyClicker(amount){
-    clicker.buyFreakyClicker(amount);
+function buyFreakyClicker(){
+    clicker.buyFreakyClicker();
+}
+function buyGeekedFreak(){
+    clicker.buyGeekedFreak();
 }
 function countUp(){
     clicker.increaseClickCount();
