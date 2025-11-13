@@ -54,6 +54,30 @@ class Clicker{
         }, 1000);
       }
 }
+class ClickerItem{
+    constructor(name, clickIncrease, cps, basePrice){
+        this.name = name;
+        this.clickIncrease = clickIncrease;
+        this.cps = cps;
+
+        if(!this.constructor.basePrice) basePrice = basePrice;
+        if(!this.constructor.currentPrice) currentPrice = basePrice;
+    }
+    updatePrice(){
+
+    }
+}
+class FreakyClicker extends ClickerItem{
+    constructor(){
+        super("freaky clicker", 3, 1, 10);
+    }
+}
+class GeekedFreak extends ClickerItem{
+    constructor(){
+        super("geeked freak", 20);
+    }
+}
+
 const clicker = new Clicker();
 init();
 
